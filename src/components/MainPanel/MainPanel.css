@@ -21,6 +21,11 @@
     font-family: "Thasadith", sans-serif;
 }
 
+.main-panel__div-infos small{
+    font-size: 0.7em;
+    opacity: 50%;
+}
+
 .main-div-infos__div-temp{
     display: flex;
     gap: 10px;

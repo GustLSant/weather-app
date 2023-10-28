@@ -24,8 +24,8 @@ function MainPanel(){
             </div>
             
             <div className='main-panel__div-infos'>
-                <p>{data.dayOfWeek}, {data.date}</p>
-                <p>{data.hour}</p>
+                <p>{data.dayOfWeek}, {data.date} <small>(dd/mm/yyyy)</small></p>
+                <p>{data.hour} h</p>
                 <p className="main-panel__hightlight">{city}</p>
                 <div className="main-div-infos__div-temp">
                     <p>{data.temp}°C</p> <WiDayCloudy size={'1.5em'}/>

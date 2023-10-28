@@ -1,40 +1,9 @@
-import React from 'react'
-import axios from 'axios'
 import MainPanel from './components/MainPanel/MainPanel'
 import SidePanel from './components/SidePanel/SidePanel'
-import { DataContext } from './components/DataContext'
 import './App.css'
 
 
 function App(){
-  const {data, setData} = React.useContext(DataContext)
-
-  async function getData(){
-    try{
-      console.log('rodou a funcao getData')
-
-      // setData({
-      //   dayOfWeek: 'Twesday',
-      //   hour: '15:00',
-      //   date: 'dd/MM/yyyy',
-      //   temp: '34',
-      //   tempMax: '36',
-      //   temMin: '32',
-      //   cloudCover: '25',
-      //   precipChance: '10',
-      //   currentPrecip: '0',
-      //   description: 'Partly Cloudy'
-      // })
-    }
-    catch(e){
-      console.log('Error: ', e)
-    }
-  }
-
-  React.useEffect(()=>{
-    getData()
-  }, []) // executa so uma vez no carregamento da pagina
-
   return(
     <div className="app">
       <MainPanel />
