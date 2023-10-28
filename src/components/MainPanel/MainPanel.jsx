@@ -5,7 +5,7 @@ import './MainPanel.css'
 
 import {
     WiDaySunny,          // ensolarado
-    WiDaySunnyOvercast,  // parcialmente nublado
+    WiDaySunnyOvercast,  // partly nublado
     WiDayCloudy,         // mostly cloudy
     WiCloudy,            // cloudy
     WiDayShowers,        // rain
@@ -30,6 +30,7 @@ function MainPanel(){
                 <div className="main-div-infos__div-temp">
                     <p>{data.temp}°C</p> <WiDayCloudy size={'1.5em'}/>
                 </div>
+                <p>Feels like: {data.tempFeel}°C</p>
                 <p className="main-panel__hightlight">{data.description}</p>
             </div>
         </div>

@@ -11,6 +11,12 @@
     padding: 20px;
 }
 
+.side-panel__info-div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .panel-spacer{
     width: 100%;
     height: 1px;

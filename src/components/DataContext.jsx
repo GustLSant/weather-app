@@ -8,9 +8,10 @@ export const DataProvider = ({children}) => {
         {
             status: 'ok',
             dayOfWeek: 'Twesday',
-            hour: '15:00',
-            date: 'dd/MM/yyyy',
+            hour: '15:00',          // definido por codigo
+            date: 'dd/MM/yyyy',     // definido por codigo
             temp: '34',
+            tempFeel: '35',
             tempMax: '36',
             tempMin: '32',
             cloudCover: '25',
