@@ -20,6 +20,11 @@
     background-color: transparent;
 }
 
+.search-bar textarea::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1; /* Firefox */
+}
+
 .search-bar textarea:focus{
     outline: none;
     color: white;

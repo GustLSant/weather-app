@@ -70,20 +70,33 @@ function SearchBar(){
             const responseForecast = await axios.request(optionsForecast)
             console.log('response do GET forecast: ', responseForecast.data)
 
-
+            const currentWeatherObj = responseForecast.data['v3-wx-observations-current']
+            const forecastHourlyObj = responseForecast.data['v3-wx-forecast-hourly-10day']
+            console.log('currentWeatherOBJ: ', currentWeatherObj)
             
             setData(
                 {
                     ...data,
+                    dayOfWeek: currentWeatherObj.dayOfWeek,
+                    dayOrNight: currentWeatherObj.dayOrNight,
+                    temp: currentWeatherObj.temperature,
+                    tempFeel: currentWeatherObj.temperatureFeelsLike,
+                    tempMax: currentWeatherObj.temperatureMax24Hour,
+                    tempMin: currentWeatherObj.temperatureMin24Hour,
+                    cloudCover: forecastHourlyObj.cloudCover[0],
+                    precipChance: forecastHourlyObj.precipChance[0],
+                    currentPrecip: currentWeatherObj.precip1Hour,
+                    humidity: currentWeatherObj.relativeHumidity,
+                    description: currentWeatherObj.wxPhraseMedium,
                     hour: getCurrentHour(),
                     date: getCurrentDate(0),
                 }
             )
         }
-        // catch(error){
-        //     console.error('Error on handleSubmit: ', error)
-        //     setIsLoading(false)
-        // }
+        catch(error){
+            console.error('Error on handleSubmit: ', error)
+            setIsLoading(false)
+        }
         finally{
             setIsLoading(false)
         }
