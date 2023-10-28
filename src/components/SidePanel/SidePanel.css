@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow-y: auto;
+    padding-right: 5px; /* para dar uma separada do scroll (e caso n esteja com o scroll, 5px ainda eh imperceptivel) */
 }
 
 .side-panel__container{
@@ -21,4 +23,11 @@
     width: 100%;
     height: 1px;
     background-color: var(--border-color);
+}
+
+.side-panel__forecast-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-x: auto;
 }

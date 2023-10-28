@@ -21,3 +21,23 @@ body{
 a{
   color: black;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0, 0.6);
+  border-radius: 99px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 10px;
+}

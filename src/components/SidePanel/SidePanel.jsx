@@ -1,5 +1,6 @@
 import React from 'react'
 import { DataContext } from '../DataContext'
+import ForecastCard from '../ForecastCard/ForecastCard'
 import {
     WiThermometer,
     WiCloud,
@@ -9,7 +10,7 @@ import {
 import './SidePanel.css'
 
 function SidePanel() {
-    const { data } = React.useContext(DataContext)
+    const { data, weatherIcons } = React.useContext(DataContext)
 
     return(
         <div className="side-panel">
@@ -54,7 +55,11 @@ function SidePanel() {
             <div className="side-panel__container glass-panel">
                 <p>5 Days Forecast</p>
                 <div className="side-panel__forecast-container">
-                    
+                    <ForecastCard day={'Twesday'} icon={weatherIcons.sunny} temperature={'35'} precip={'0'} />
+                    <ForecastCard day={'Twesday'} icon={weatherIcons.partlyCloudy} temperature={'35'} precip={'0'} />
+                    <ForecastCard day={'Twesday'} icon={weatherIcons.mostlyCloudy} temperature={'35'} precip={'0'} />
+                    <ForecastCard day={'Twesday'} icon={weatherIcons.cloudy} temperature={'35'} precip={'0'} />
+                    <ForecastCard day={'Twesday'} icon={weatherIcons.raining} temperature={'35'} precip={'0'} />
                 </div>
             </div>
         </div>
