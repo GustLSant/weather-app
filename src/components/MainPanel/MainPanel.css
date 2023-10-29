@@ -16,6 +16,11 @@
     font-weight: bold;
 }
 
+.help-text{
+    font-size: 0.8em;
+    opacity: 50%;
+}
+
 .main-panel__div-infos{
     font-size: 1.5em;
     font-family: "Thasadith", sans-serif;
