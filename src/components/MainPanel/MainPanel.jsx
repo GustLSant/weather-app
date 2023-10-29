@@ -14,7 +14,10 @@ import {
 
 
 function MainPanel(){
-    const {data, city} = React.useContext(DataContext)
+    const {data, city, weatherIcons} = React.useContext(DataContext)
+    const Icon = Object.values(weatherIcons)[data.iconId] // pra renderizar como um component react, tem q comecar com letra maiuscula
+    console.log(Object.values(weatherIcons))
+    console.log(data.iconId)
 
     return(
         <div className="main-panel">
@@ -30,7 +33,7 @@ function MainPanel(){
                 <p>{data.hour} h</p>
                 <p className="main-panel__hightlight">{city}</p>
                 <div className="main-div-infos__div-temp">
-                    <p>{data.temp}°C</p> <WiDayCloudy size={'1.5em'}/>
+                    <p>{data.temp}°C</p> {<Icon size={'1.5em'} />}
                 </div>
                 <p>Feels like: {data.tempFeel}°C</p>
                 <p className="main-panel__hightlight">{data.description}</p>

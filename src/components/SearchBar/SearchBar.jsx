@@ -71,7 +71,7 @@ function SearchBar(){
             const currentWeatherObj = responseForecast.data['v3-wx-observations-current']
             const forecastHourlyObj = responseForecast.data['v3-wx-forecast-hourly-10day']
             console.log('currentWeatherOBJ: ', currentWeatherObj)
-            
+
             setData(
                 {
                     ...data,

@@ -109,11 +109,11 @@ export const DataProvider = ({children}) => {
         dayCloudy: WiCloudy,                  // iconID: 3
         dayRaining: WiDayShowers,             // iconID: 4
 
-        nightClearSky: WiDaySunny,            // iconID: 5
-        nightPartlyCloudy: WiDaySunny,        // iconID: 6
-        nightMostlyCloudy: WiDaySunny,        // iconID: 7
-        nightCloudy: WiDaySunny,              // iconID: 8
-        nightRaining: WiDaySunny,             // iconID: 9
+        nightClearSky: WiNightClear,                // iconID: 5
+        nightPartlyCloudy: WiNightAltPartlyCloudy,  // iconID: 6
+        nightMostlyCloudy: WiNightAltCloudy,        // iconID: 7
+        nightCloudy: WiCloudy,                      // iconID: 8
+        nightRaining: WiNightAltShowers,            // iconID: 9
     }
 
     const [city, setCity] = React.useState('Diamond City')
