@@ -6,7 +6,7 @@ import { CiSearch } from 'react-icons/ci'
 import { AiOutlineLoading } from 'react-icons/ai'
 
 function SearchBar(){
-    const { data, setData, setCity } = React.useContext(DataContext)
+    const { data, setData, setCity, getIconId } = React.useContext(DataContext)
     const [input, setInput] = React.useState('')
     const [isLoading, setIsLoading] = React.useState(false)
     const inputRef = React.useRef(null)
@@ -22,8 +22,6 @@ function SearchBar(){
     }
 
     async function handleSubmit(){
-        console.log('rodou a funcao async que faz a requisicao')
-
         if(input.length == 0){
             return
         }
@@ -47,7 +45,7 @@ function SearchBar(){
 
             const responseLocation = await axios.request(optionsLocation)
             setCity(responseLocation.data.location.city[0])
-            console.log('response do GET location: ', responseLocation.data)
+            //console.log('response do GET location: ', responseLocation.data)
             
             const _latitude = responseLocation.data.location.latitude[0]
             const _longitude = responseLocation.data.location.longitude[0]
@@ -90,6 +88,7 @@ function SearchBar(){
                     description: currentWeatherObj.wxPhraseMedium,
                     hour: getCurrentHour(),
                     date: getCurrentDate(0),
+                    iconId: getIconId(currentWeatherObj.dayOrNight, currentWeatherObj.precip1Hour, forecastHourlyObj.cloudCover[0])
                 }
             )
         }
@@ -131,7 +130,6 @@ function SearchBar(){
         <div className="search-bar glass-panel">
             <CiSearch size={'1.5em'} onClick={handleSubmit} />
             <textarea name="search-input" id="search-input" placeholder="City name" rows={1} ref={inputRef} value={input} onChange={handleInputChange} onKeyDown={handleKeyDown}></textarea>
-            {/* <input type="textarea" placeholder="City name" name="search-input" id="" ref={inputRef} value={input} onChange={handleInputChange} onKeyDown={handleKeyDown} /> */}
             <AiOutlineLoading style={(isLoading)?{opacity:'100%'}:{opacity:'0%'}} size={'1.5em'} className='loading-icon' />
         </div>
     );

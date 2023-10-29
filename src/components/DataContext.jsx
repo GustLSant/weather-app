@@ -35,23 +35,24 @@ export const DataProvider = ({children}) => {
             currentPrecip: '0',
             humidity: '50',
             description: 'Mostly Cloudy',
-            iconID: 5               // definido por codigo
+            iconId: 5               // definido por codigo
         }
     )
 
 
-    function getIconId(){
+    function getIconId(_dayOrNight, _currentPrecip, _cloudCover){
         let result = 0
+        console.log('parametros passados para getIconId: ', _dayOrNight, _currentPrecip, _cloudCover)
 
-        if(data.dayOrNight === 'D'){
-            if(data.currentPrecip == 0){
-                if(data.cloudCover <= 25){
+        if(_dayOrNight === 'D'){
+            if(_currentPrecip == 0){
+                if(_cloudCover <= 25){
                     result = 0
                 }
-                else if(data.cloudCover <= 50){
+                else if(_cloudCover <= 50){
                     result = 1
                 }
-                else if(data.cloudCover <= 75){
+                else if(_cloudCover <= 75){
                     result = 2
                 }
                 else{
@@ -63,14 +64,14 @@ export const DataProvider = ({children}) => {
             }
         }
         else{
-            if(data.currentPrecip == 0){
-                if(data.cloudCover <= 25){
+            if(_currentPrecip == 0){
+                if(_cloudCover <= 25){
                     result = 5
                 }
-                else if(data.cloudCover <= 50){
+                else if(_cloudCover <= 50){
                     result = 6
                 }
-                else if(data.cloudCover <= 75){
+                else if(_cloudCover <= 75){
                     result = 7
                 }
                 else{
@@ -82,6 +83,7 @@ export const DataProvider = ({children}) => {
             }
         }
 
+        console.log('funcao getId() rodou e retornou: ', result)
         return result
     }
     

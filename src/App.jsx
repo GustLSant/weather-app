@@ -10,15 +10,9 @@ function App(){
 
   const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(src/assets/images/'
   const bgImageSulfix = ')'
-  const [bgImage, setBgImage] = React.useState(bgImagePrefix + 'default-bg-image.jpg' + bgImageSulfix)
+  let bgImage = bgImagePrefix + Object.values(bgImagesSources)[data.iconId] + bgImageSulfix
 
-
-  React.useEffect(()=>{
-    console.log('rodou o useEffect do background do app')
-    setBgImage(bgImagePrefix + Object.values(bgImagesSources)[data.iconID] + bgImageSulfix)
-  }, [data])
-
-  console.log('render app')
+  //console.log('render app')
 
   return(
     <div className="app" style={{backgroundImage: bgImage}}>
