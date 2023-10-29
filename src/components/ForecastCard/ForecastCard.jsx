@@ -9,8 +9,6 @@ import {
 
 
 function ForecastCard(props) {
-    console.log(props.icon)
-
     return (
         <div className="forecast-card">
             <p>{props.day}</p>
