@@ -11,7 +11,7 @@ function App(){
   const [error, setError] = React.useState(false)
   let inverted = false
 
-  const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(src/assets/images/'
+  const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(/images/'
   const bgImageSulfix = ')'
   let bgImage = bgImagePrefix + Object.values(bgImagesSources)[data.iconId] + bgImageSulfix
 
