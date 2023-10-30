@@ -3,15 +3,6 @@ import { DataContext } from '../DataContext'
 import SearchBar from '../SearchBar/SearchBar'
 import './MainPanel.css'
 
-import {
-    WiDaySunny,          // ensolarado
-    WiDaySunnyOvercast,  // partly nublado
-    WiDayCloudy,         // mostly cloudy
-    WiCloudy,            // cloudy
-    WiDayShowers,        // rain
-    WiDayStormShowers,   // tempestade chovendo
-} from 'react-icons/wi'
-
 
 function MainPanel(){
     const {data, city, weatherIcons} = React.useContext(DataContext)
@@ -24,7 +15,7 @@ function MainPanel(){
                 <SearchBar />
             </div>
             
-            <p className='help-text'>Type your city&lsquo;s name in the search bar above and press Enter.</p>
+            <p className='help-text'>Type any city name in the search bar above and press Enter.</p>
 
             <div className='main-panel__div-infos'>
                 <p>{data.dayOfWeek}, {data.date} <small>(dd/mm/yyyy)</small></p>

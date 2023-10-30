@@ -33,6 +33,6 @@
     display: flex;
     gap: 25px;
     justify-content: space-between;
-    flex-wrap: wrap;
     overflow-x: auto;
+    padding-bottom: 5px;
 }
