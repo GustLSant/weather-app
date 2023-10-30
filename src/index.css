@@ -18,10 +18,6 @@ body{
   /* font-family: "Thasadith", "Comfortaa", sans-serif; */
 }
 
-a{
-  color: black;
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
