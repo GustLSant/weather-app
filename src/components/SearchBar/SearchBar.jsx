@@ -17,6 +17,7 @@ function SearchBar(){
 
     function handleKeyDown(event){
         if(event.key === 'Enter'){
+            event.preventDefault()
             handleSubmit()
         }
     }
@@ -144,7 +145,7 @@ function SearchBar(){
     return(
         <div className="search-bar glass-panel">
             <CiSearch size={'1.5em'} onClick={handleSubmit} />
-            <textarea name="search-input" id="search-input" placeholder="City name" rows={1} ref={inputRef} value={input} onChange={handleInputChange} onKeyDown={handleKeyDown}></textarea>
+            <textarea name="search-input" id="search-input" placeholder="City name" rows={1} ref={inputRef} value={input} onKeyDown={handleKeyDown} onChange={handleInputChange}></textarea>
             <AiOutlineLoading style={(isLoading)?{opacity:'100%'}:{opacity:'0%'}} size={'1.5em'} className='loading-icon' />
         </div>
     );

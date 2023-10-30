@@ -11,6 +11,7 @@ import './SidePanel.css'
 
 function SidePanel() {
     const { data, weatherIcons } = React.useContext(DataContext)
+    const forecastContainerRef = React.useRef(null)
 
     const forecastComponents = []
 
@@ -22,9 +23,23 @@ function SidePanel() {
         const description = data.forecastDescriptions[i].split('.')[0]
 
         forecastComponents.push(
-            <ForecastCard  day={day} maxTemperature={maxTemperature} minTemperature={minTemperature} precip={precip} description={description} />
+            <ForecastCard key={i} day={day} maxTemperature={maxTemperature} minTemperature={minTemperature} precip={precip} description={description} />
         )
     }
+
+
+    function handleScrollForecastContainer(event){
+        if(event.deltaY !== 0){
+            const scrollSpeed = 20
+            if(event.deltaY > 0){
+                forecastContainerRef.current.scrollLeft -= scrollSpeed
+            }
+            else{
+                forecastContainerRef.current.scrollLeft += scrollSpeed
+            }
+        }
+    }
+
 
     return(
         <div className="side-panel">
@@ -68,7 +83,7 @@ function SidePanel() {
 
             <div className="side-panel__container glass-panel">
                 <p>5 Days Forecast</p>
-                <div className="side-panel__forecast-container">
+                <div className="side-panel__forecast-container" ref={forecastContainerRef} onWheel={(e)=>{handleScrollForecastContainer(e)}}>
                     {forecastComponents}
                 </div>
             </div>

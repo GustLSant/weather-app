@@ -15,7 +15,7 @@ function MainPanel(){
                 <SearchBar />
             </div>
             
-            <p className='help-text'>Type any city name in the search bar above and press Enter.</p>
+            <p className='help-text'>Type any city name in the search bar above and press Enter (or click the search button).</p>
 
             <div className='main-panel__div-infos'>
                 <p>{data.dayOfWeek}, {data.date} <small>(dd/mm/yyyy)</small></p>
