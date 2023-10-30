@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    /* background-color: rgba(255, 0, 0, 0.2); */
 }
 
 .main-panel__header{
@@ -42,4 +41,19 @@
 .main-panel__hightlight{
     font-size: 1.1em;
     font-weight: bold;
+}
+
+@media (max-width: 750px) {
+    .main-panel{
+        padding: 0px;
+        gap: 40px;
+    }
+
+    .main-panel__div-infos{
+        font-size: 1.25em;
+    }
+
+    .help-text{
+        font-size: 0.7em;
+    }
 }

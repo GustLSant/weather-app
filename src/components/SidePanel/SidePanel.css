@@ -36,3 +36,10 @@
     overflow-x: auto;
     padding-bottom: 5px;
 }
+
+@media (max-width: 750px) {
+    .side-panel{
+        overflow-y: visible;
+        font-size: 0.9em;
+    }
+}
