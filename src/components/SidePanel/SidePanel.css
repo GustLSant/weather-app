@@ -25,9 +25,13 @@
     background-color: var(--border-color);
 }
 
+.side-panel__container:nth-child(3){
+    gap: 25px;
+}
+
 .side-panel__forecast-container{
     display: flex;
-    gap: 10px;
+    gap: 25px;
     justify-content: space-between;
     flex-wrap: wrap;
     overflow-x: auto;

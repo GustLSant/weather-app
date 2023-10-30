@@ -1,11 +1,24 @@
 .forecast-card{
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 5px;
+    max-width: 25%;
 }
 
 .forecast-card div{
     display: flex;
     align-items: center;
+}
+
+.forecast-card__day{
+    padding-bottom: 5px;
+    align-self: center;
+    font-weight: bold;
+}
+
+.forecast-card__description{
+    align-self: center;
+    max-width: 80%;
+    text-align: center;
+    font-family: "Thasadith", "Comfortaa", sans-serif;
 }

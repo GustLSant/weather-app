@@ -11,26 +11,30 @@ import {
 function ForecastCard(props) {
     return (
         <div className="forecast-card">
-            <p>{props.day}</p>
-            {<props.icon size={'2.5em'} />}
+            <p className='forecast-card__day'>{props.day}</p>
             <div>
                 <WiThermometer size={'1.5em'} />
-                <p>{props.temperature}°C</p>
+                <p>Max: {props.maxTemperature}°C</p>
+            </div>
+            <div>
+                <WiThermometer size={'1.5em'} />
+                <p>Min: {props.minTemperature}°C</p>
             </div>
             <div>
                 <WiRaindrop size={'1.5em'} />
                 <p>{props.precip}<small>mm</small></p>
             </div>
-            
+            <p className='forecast-card__description'>{props.description}</p>
         </div>
     )
 }
 
 ForecastCard.propTypes = {
     day: PropTypes.string.isRequired,
-    icon: PropTypes.func.isRequired,
-    temperature: PropTypes.string.isRequired,
+    maxTemperature: PropTypes.string.isRequired,
+    minTemperature: PropTypes.string.isRequired,
     precip: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
   };
 
 export default ForecastCard;

@@ -71,6 +71,7 @@ function SearchBar(){
             const currentWeatherObj = responseForecast.data['v3-wx-observations-current']
             const forecastHourlyObj = responseForecast.data['v3-wx-forecast-hourly-10day']
             console.log('currentWeatherOBJ: ', currentWeatherObj)
+            console.log('responseForecast["v3-wx-forecast-daily-15day"].dayOfWeek: ', responseForecast.data['v3-wx-forecast-daily-15day'].dayOfWeek)
 
             setData(
                 {
@@ -88,7 +89,12 @@ function SearchBar(){
                     description: currentWeatherObj.wxPhraseMedium,
                     hour: getHourFromAPI(currentWeatherObj.validTimeLocal),
                     date: getDateFromAPI(currentWeatherObj.validTimeLocal),
-                    iconId: getIconId(currentWeatherObj.dayOrNight, currentWeatherObj.precip1Hour, forecastHourlyObj.cloudCover[0])
+                    iconId: getIconId(currentWeatherObj.dayOrNight, currentWeatherObj.precip1Hour, forecastHourlyObj.cloudCover[0]),
+                    forecastDaysOfWeek: [...responseForecast.data['v3-wx-forecast-daily-15day'].dayOfWeek],
+                    forecastMaxTemperatures: [...responseForecast.data['v3-wx-forecast-daily-15day'].calendarDayTemperatureMax],
+                    forecastMinTemperatures: [...responseForecast.data['v3-wx-forecast-daily-15day'].calendarDayTemperatureMin],
+                    forecastPrecips: [...responseForecast.data['v3-wx-forecast-daily-15day'].qpf],
+                    forecastDescriptions: [...responseForecast.data['v3-wx-forecast-daily-15day'].narrative]
                 }
             )
         }

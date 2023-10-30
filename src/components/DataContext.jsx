@@ -23,9 +23,9 @@ export const DataProvider = ({children}) => {
         {
             status: 'ok',
             dayOfWeek: 'Twesday',
-            hour: '15:35',          // definido por codigo
+            hour: '15:35',                   // definido por codigo
             dayOrNight: 'D',
-            date: '21/10/2023',     // definido por codigo
+            date: '21/10/2023',              // definido por codigo
             temp: '38',
             tempFeel: '39',
             tempMax: '42',
@@ -35,7 +35,42 @@ export const DataProvider = ({children}) => {
             currentPrecip: '0',
             humidity: '50',
             description: 'Mostly Cloudy',
-            iconId: 2               // definido por codigo
+            iconId: 2,                       // definido por codigo
+            forecastDaysOfWeek: [
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            forecastMaxTemperatures: [
+                '38',
+                '38',
+                '38',
+                '36',
+                '35'
+            ],
+            forecastMinTemperatures: [
+                '21',
+                '20',
+                '21',
+                '21',
+                '20'
+            ],
+            forecastPrecips: [
+                '0',
+                '0',
+                '0',
+                '0',
+                '0'
+            ],
+            forecastDescriptions: [
+                "Mostly clear. Low 20C.",
+                "Mostly sunny. Highs 37 to 39C and lows 20 to 22C.",
+                "More sun than clouds. Highs 37 to 39C and lows 20 to 22C.",
+                "Times of sun and clouds. Highs 35 to 37C and lows 19 to 21C.",
+                "Times of sun and clouds. Highs 34 to 36C and lows 18 to 20C."
+            ]
         }
     )
 

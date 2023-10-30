@@ -12,6 +12,20 @@ import './SidePanel.css'
 function SidePanel() {
     const { data, weatherIcons } = React.useContext(DataContext)
 
+    const forecastComponents = []
+
+    for(let i=0; i<5; i++){
+        const day = data.forecastDaysOfWeek[i]
+        const maxTemperature = data.forecastMaxTemperatures[i]
+        const minTemperature = data.forecastMinTemperatures[i]
+        const precip =  data.forecastPrecips[i]
+        const description = data.forecastDescriptions[i].split('.')[0]
+
+        forecastComponents.push(
+            <ForecastCard  day={day} maxTemperature={maxTemperature} minTemperature={minTemperature} precip={precip} description={description} />
+        )
+    }
+
     return(
         <div className="side-panel">
             <div className="side-panel__container glass-panel">
@@ -55,11 +69,7 @@ function SidePanel() {
             <div className="side-panel__container glass-panel">
                 <p>5 Days Forecast</p>
                 <div className="side-panel__forecast-container">
-                    {/* <ForecastCard day={'Twesday'} icon={weatherIcons.sunny} temperature={'35'} precip={'0'} />
-                    <ForecastCard day={'Twesday'} icon={weatherIcons.partlyCloudy} temperature={'35'} precip={'0'} />
-                    <ForecastCard day={'Twesday'} icon={weatherIcons.mostlyCloudy} temperature={'35'} precip={'0'} />
-                    <ForecastCard day={'Twesday'} icon={weatherIcons.cloudy} temperature={'35'} precip={'0'} />
-                    <ForecastCard day={'Twesday'} icon={weatherIcons.raining} temperature={'35'} precip={'0'} /> */}
+                    {forecastComponents}
                 </div>
             </div>
         </div>
