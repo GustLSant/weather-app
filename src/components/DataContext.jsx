@@ -35,7 +35,7 @@ export const DataProvider = ({children}) => {
             currentPrecip: '0',
             humidity: '50',
             description: 'Mostly Cloudy',
-            iconId: 5               // definido por codigo
+            iconId: 2               // definido por codigo
         }
     )
 
@@ -89,7 +89,7 @@ export const DataProvider = ({children}) => {
     
 
     const bgImagesSources = {
-        dayClearSky: 'day-clear-sky.jpg',                // iconID: 0
+        dayClearSky: 'day-clear-sky-compressed.jpg',     // iconID: 0
         dayPartlyCloudy: 'day-partially-cloudy.jpg',     // iconID: 1
         dayMostlyCloudy: 'day-mostly-cloudy.jpg',        // iconID: 2
         dayCloudy: 'day-cloudy.jpg',                     // iconID: 3

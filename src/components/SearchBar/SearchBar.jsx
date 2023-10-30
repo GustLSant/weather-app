@@ -53,7 +53,7 @@ function SearchBar(){
                 method: 'GET',
                 url: 'https://weather338.p.rapidapi.com/weather/forecast',
                 params: {
-                  date: getCurrentDate(1),
+                  date: getCurrentDate(),
                   latitude: _latitude,
                   longitude: _longitude,
                   language: 'en-US',
@@ -86,8 +86,8 @@ function SearchBar(){
                     currentPrecip: currentWeatherObj.precip1Hour,
                     humidity: currentWeatherObj.relativeHumidity,
                     description: currentWeatherObj.wxPhraseMedium,
-                    hour: getCurrentHour(),
-                    date: getCurrentDate(0),
+                    hour: getHourFromAPI(currentWeatherObj.validTimeLocal),
+                    date: getDateFromAPI(currentWeatherObj.validTimeLocal),
                     iconId: getIconId(currentWeatherObj.dayOrNight, currentWeatherObj.precip1Hour, forecastHourlyObj.cloudCover[0])
                 }
             )
@@ -104,25 +104,34 @@ function SearchBar(){
     }
 
 
-    function getCurrentDate(_format){ 
+    function getCurrentDate(){ // retorna a data atual (no formato exigido pela API) de acordo com o pc onde ocorreu a requisicao
         const dateObj = new Date()
         const year = dateObj.getFullYear()
         const month = String(dateObj.getMonth()+1).padStart(2, '0') // a contagem do mes comeca no 0
         const day = String(dateObj.getDate()).padStart(2, '0')
 
-        if(_format === 1){
-            return `${year}${month}${day}`   // retorno: '20200622'
-        }
-        else{
-            return `${day}/${month}/${year}` // retorno: 'dd/MM/yyyy'
-        }
+        return `${year}${month}${day}`   // retorno: '20200622'
     }
 
-    function getCurrentHour(){
-        const dateObj = new Date()
-        const hours = String(dateObj.getHours()).padStart(2, '0')
-        const minutes = String(dateObj.getMinutes()).padStart(2, '0')
-        return `${hours}:${minutes}`
+    function getDateFromAPI(_validTime){ // entrada: 2023-10-25T16:20:27-0300
+        const rawDate = _validTime.split('T')[0] // fica 2023-10-25
+        const elements = rawDate.split('-')
+        
+        const day = String(elements[2]).padStart(2, '0')
+        const month = String(elements[1]).padStart(2, '0')
+        const year = String(elements[0])
+        
+        return `${day}/${month}/${year}`
+    }
+
+    function getHourFromAPI(_validTime){ // entrada: 2023-10-25T16:20:27-0300
+        const rawHour = _validTime.split('T')[1] // fica 16:20:27-0300
+        const elements = rawHour.split('-')[0].split(':')
+        
+        const hour = String(elements[0]).padStart(2, '0')
+        const minutes = String(elements[1]).padStart(2, '0')
+        
+        return `${hour}:${minutes}`
     }
 
 

@@ -16,8 +16,6 @@ import {
 function MainPanel(){
     const {data, city, weatherIcons} = React.useContext(DataContext)
     const Icon = Object.values(weatherIcons)[data.iconId] // pra renderizar como um component react, tem q comecar com letra maiuscula
-    console.log(Object.values(weatherIcons))
-    console.log(data.iconId)
 
     return(
         <div className="main-panel">
