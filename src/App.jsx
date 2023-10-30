@@ -36,7 +36,7 @@ function App(){
       {(error && <PopUpError handleClose={()=>{setError(false)}} />)}
       <MainPanel />
       <SidePanel />
-      <a className="a-credits" href="../credits-page.html" target='_blank'>credits</a>
+      <a className="a-credits" href="/credits-page.html" target='_blank'>credits</a>
     </div>
   )
 }
