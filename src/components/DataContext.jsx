@@ -35,7 +35,7 @@ export const DataProvider = ({children}) => {
             currentPrecip: '0',
             humidity: '50',
             description: 'Mostly Cloudy',
-            iconId: 9,                       // definido por codigo
+            iconId: 2,                       // definido por codigo
             forecastDaysOfWeek: [
                 "Wednesday",
                 "Thursday",
