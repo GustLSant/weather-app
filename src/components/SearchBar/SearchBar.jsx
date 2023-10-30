@@ -77,6 +77,7 @@ function SearchBar(){
             setData(
                 {
                     ...data,
+                    status: 'ok',
                     dayOfWeek: currentWeatherObj.dayOfWeek,
                     dayOrNight: currentWeatherObj.dayOrNight,
                     temp: currentWeatherObj.temperature,
@@ -101,6 +102,10 @@ function SearchBar(){
         }
         catch(error){
             console.error('Error on handleSubmit: ', error)
+            setData({
+                ...data,
+                status: 'error'
+            })
             setIsLoading(false)
         }
         finally{

@@ -2,11 +2,13 @@ import React from 'react'
 import MainPanel from './components/MainPanel/MainPanel'
 import SidePanel from './components/SidePanel/SidePanel'
 import { DataContext } from './components/DataContext'
+import PopUpError from './components/PopUpError/PopUpError'
 import './App.css'
 
 
 function App(){
   const { data, bgImagesSources } = React.useContext(DataContext)
+  const [error, setError] = React.useState(false)
   let inverted = false
 
   const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(src/assets/images/'
@@ -15,15 +17,23 @@ function App(){
 
   //console.log('render app')
 
-  if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){
-    inverted = true
-  }
-  else{
-    inverted = false
-  }
+  if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){inverted = true}
+  else{inverted = false}
+
+
+  React.useEffect(()=>{
+    if(data.status === 'ok'){
+      setError(false)
+    }
+    else{
+      setError(true)
+    }
+  }, [data])
+
 
   return(
     <div className={(inverted) ? "app inverted" : "app"} style={{backgroundImage: bgImage}}>
+      {(error && <PopUpError handleClose={()=>{setError(false)}} />)}
       <MainPanel />
       <SidePanel />
     </div>

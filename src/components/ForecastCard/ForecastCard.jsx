@@ -31,10 +31,10 @@ function ForecastCard(props) {
 
 ForecastCard.propTypes = {
     day: PropTypes.string.isRequired,
-    maxTemperature: PropTypes.string.isRequired,
-    minTemperature: PropTypes.string.isRequired,
-    precip: PropTypes.string.isRequired,
+    maxTemperature: PropTypes.number.isRequired,
+    minTemperature: PropTypes.number.isRequired,
+    precip: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
-  };
+};
 
 export default ForecastCard;
