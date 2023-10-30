@@ -7,6 +7,7 @@ import './App.css'
 
 function App(){
   const { data, bgImagesSources } = React.useContext(DataContext)
+  let inverted = false
 
   const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(src/assets/images/'
   const bgImageSulfix = ')'
@@ -14,8 +15,15 @@ function App(){
 
   //console.log('render app')
 
+  if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){
+    inverted = true
+  }
+  else{
+    inverted = false
+  }
+
   return(
-    <div className="app" style={{backgroundImage: bgImage}}>
+    <div className={(inverted) ? "app inverted" : "app"} style={{backgroundImage: bgImage}}>
       <MainPanel />
       <SidePanel />
     </div>

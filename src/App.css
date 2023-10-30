@@ -35,6 +35,15 @@
         height: fit-content;
         flex-direction: column;
         padding: 20px;
+        padding-top: 30px;
         gap: 40px;
+    }
+
+    .app.inverted{
+        background-position: 40% center;
+        transform: scaleX(-1);
+    }
+    .app.inverted > div{
+        transform: scaleX(-1);
     }
 }
