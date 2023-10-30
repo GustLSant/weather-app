@@ -35,7 +35,7 @@ export const DataProvider = ({children}) => {
             currentPrecip: '0',
             humidity: '50',
             description: 'Mostly Cloudy',
-            iconId: 2,                       // definido por codigo
+            iconId: 9,                       // definido por codigo
             forecastDaysOfWeek: [
                 "Wednesday",
                 "Thursday",
@@ -125,16 +125,16 @@ export const DataProvider = ({children}) => {
 
     const bgImagesSources = {
         dayClearSky: 'day-clear-sky-compressed.jpg',     // iconID: 0
-        dayPartlyCloudy: 'day-partially-cloudy.jpg',     // iconID: 1
-        dayMostlyCloudy: 'day-mostly-cloudy.jpg',        // iconID: 2
-        dayCloudy: 'day-cloudy.jpg',                     // iconID: 3
-        dayRaining: 'day-raining.jpg',                   // iconID: 4
+        dayPartlyCloudy: 'day-partially-cloudy-compressed.jpg',     // iconID: 1
+        dayMostlyCloudy: 'day-mostly-cloudy-compressed.jpg',        // iconID: 2
+        dayCloudy: 'day-cloudy-compressed.jpg',                     // iconID: 3
+        dayRaining: 'day-raining-compressed.jpg',                   // iconID: 4
 
-        nightClearSky: 'night-clear-sky-left.jpg',       // iconID: 5
-        nightPartlyCloudy: 'night-partly-cloudy.jpg',    // iconID: 6
-        nightMostlyCloudy: 'night-mostly-cloudy.jpg',    // iconID: 7
-        nightCloudy: 'night-mostly-cloudy.jpg',          // iconID: 8
-        nightRaining: 'night-raining-2.jpg',             // iconID: 9
+        nightClearSky: 'night-clear-sky-compressed.jpg',       // iconID: 5
+        nightPartlyCloudy: 'night-partly-cloudy-compressed.jpg',    // iconID: 6
+        nightMostlyCloudy: 'night-mostly-cloudy-compressed.jpg',    // iconID: 7
+        nightCloudy: 'night-mostly-cloudy-compressed.jpg',          // iconID: 8
+        nightRaining: 'night-raining-compressed.jpg',             // iconID: 9
     }
 
     const weatherIcons = {

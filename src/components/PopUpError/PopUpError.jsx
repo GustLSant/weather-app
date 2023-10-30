@@ -10,7 +10,7 @@ function PopUpError(props){
                 <VscError size={'2.0em'} color={'red'} />
                 <div>
                     <p>Ops! Something went wrong. Please try to search the city again.</p>
-                    <small>Click on anything to close this window.</small>
+                    <small>Click anywhere to close this window.</small>
                 </div>
             </div>
         </div>
