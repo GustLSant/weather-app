@@ -36,6 +36,7 @@ function App(){
       {(error && <PopUpError handleClose={()=>{setError(false)}} />)}
       <MainPanel />
       <SidePanel />
+      <a className="a-credits" href="../credits-page.html" target='_blank'>credits</a>
     </div>
   )
 }
@@ -54,6 +55,7 @@ export default App
 // night-cloudy: ???
 // night-raining-2: Image by <a href="https://pixabay.com/users/milivigerova-742747/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=715911">Milada Vigerova</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=715911">Pixabay</a>
 
+// favicon: <a href="https://www.flaticon.com/free-icons/climate" title="climate icons">Climate icons created by bqlqn - Flaticon</a>
 
 
 

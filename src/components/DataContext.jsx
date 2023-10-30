@@ -25,7 +25,7 @@ export const DataProvider = ({children}) => {
             dayOfWeek: 'Twesday',
             hour: '15:35',                   // definido por codigo
             dayOrNight: 'D',
-            date: '21/10/2023',              // definido por codigo
+            date: getCurrentDate(),              // definido por codigo
             temp: '38',
             tempFeel: '39',
             tempMax: '42',
@@ -44,25 +44,25 @@ export const DataProvider = ({children}) => {
                 "Sunday"
             ],
             forecastMaxTemperatures: [
-                '38',
-                '38',
-                '38',
-                '36',
-                '35'
+                38,
+                38,
+                38,
+                36,
+                35
             ],
             forecastMinTemperatures: [
-                '21',
-                '20',
-                '21',
-                '21',
-                '20'
+                21,
+                20,
+                21,
+                21,
+                20
             ],
             forecastPrecips: [
-                '0',
-                '0',
-                '0',
-                '0',
-                '0'
+                0,
+                0,
+                0,
+                0,
+                0
             ],
             forecastDescriptions: [
                 "Mostly clear. Low 20C.",
@@ -152,6 +152,16 @@ export const DataProvider = ({children}) => {
     }
 
     const [city, setCity] = React.useState('Diamond City')
+
+
+    function getCurrentDate(){ // retorna a data atual
+        const dateObj = new Date()
+        const year = dateObj.getFullYear()
+        const month = String(dateObj.getMonth()+1).padStart(2, '0') // a contagem do mes comeca no 0
+        const day = String(dateObj.getDate()).padStart(2, '0')
+
+        return `${day}/${month}/${year}`
+    }
 
 
     return(
