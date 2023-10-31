@@ -49,11 +49,7 @@
         gap: 40px;
     }
 
-    .app.inverted{
-        background-position: 40% center;
-        transform: scaleX(-1);
-    }
-    .app.inverted > div{
-        transform: scaleX(-1);
+    .app.alt{
+        background-position: left center;
     }
 }

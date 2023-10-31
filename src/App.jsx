@@ -9,7 +9,7 @@ import './App.css'
 function App(){
   const { data, bgImagesSources } = React.useContext(DataContext)
   const [error, setError] = React.useState(false)
-  let inverted = false
+  let alt = false
 
   const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(/images/'
   const bgImageSulfix = ')'
@@ -17,8 +17,8 @@ function App(){
 
   //console.log('render app')
 
-  if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){inverted = true}
-  else{inverted = false}
+  if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){alt = true}
+  else{alt = false}
 
 
   React.useEffect(()=>{
@@ -32,7 +32,7 @@ function App(){
 
 
   return(
-    <div className={(inverted) ? "app inverted" : "app"} style={{backgroundImage: bgImage}}>
+    <div className={(alt) ? "app alt" : "app"} style={{backgroundImage: bgImage}}>
       {(error && <PopUpError handleClose={()=>{setError(false)}} />)}
       <MainPanel />
       <SidePanel />
