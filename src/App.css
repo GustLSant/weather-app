@@ -45,6 +45,7 @@
     .app{
         height: auto;
         flex-direction: column;
+        background-attachment: scroll;
         padding: 30px 20px;
         gap: 40px;
     }
