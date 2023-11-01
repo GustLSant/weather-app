@@ -9,16 +9,15 @@ import './App.css'
 function App(){
   const { data, bgImagesSources } = React.useContext(DataContext)
   const [error, setError] = React.useState(false)
-  let alt = false
 
   const bgImagePrefix = 'linear-gradient(to bottom, var(--blackness-background), var(--blackness-background)), url(/images/'
   const bgImageSulfix = ')'
   let bgImage = bgImagePrefix + Object.values(bgImagesSources)[data.iconId] + bgImageSulfix
 
-  //console.log('render app')
+  // document.body.style.backgroundImage = bgImage
+  document.getElementById('html').style.backgroundImage = bgImage
 
-  if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){alt = true}
-  else{alt = false}
+  //console.log('render app')
 
 
   React.useEffect(()=>{
@@ -32,7 +31,7 @@ function App(){
 
 
   return(
-    <div className={(alt) ? "app alt" : "app"} style={{backgroundImage: bgImage}}>
+    <div className="app">
       {(error && <PopUpError handleClose={()=>{setError(false)}} />)}
       <MainPanel />
       <SidePanel />
