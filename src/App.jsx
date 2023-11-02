@@ -15,12 +15,13 @@ function App(){
   const bgImageSulfix = ')'
   let bgImage = bgImagePrefix + Object.values(bgImagesSources)[data.iconId] + bgImageSulfix
 
-  //console.log('render app')
 
+  // manipulacao do background para mostrar melhor as imagens de fundo no mobile
   if(window.innerWidth <= 750 && (data.iconId == 0 || data.iconId == 5 || data.iconId == 6)){alt = true}
   else{alt = false}
 
 
+  // renderizacao do pop-up de erro
   React.useEffect(()=>{
     if(data.status === 'ok'){
       setError(false)
@@ -29,6 +30,15 @@ function App(){
       setError(true)
     }
   }, [data])
+
+
+  // solucao para o bug do espaco em branco no background ao scrollar no mobile (a height no mobile varia se estah ou nao aparecendo a barra de url)
+  React.useEffect(()=>{
+    if(window.innerWidth <= 750){
+      const app = document.getElementsByClassName('app')[0]
+      app.style.minHeight = window.screen.height + 'px'
+    }
+  })
 
   
   return(

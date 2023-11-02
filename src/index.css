@@ -13,12 +13,6 @@
   text-decoration: none;
 }
 
-@media (max-width: 750px){
-  html{
-    min-height: calc(100% + 60px); /* era pra consertar a barra branca que aparece no fundo do background no mobile, mas n funcionou */
-  }
-}
-
 body{
   font-family: "Comfortaa", sans-serif;
   /* font-family: "Thasadith", "Comfortaa", sans-serif; */
