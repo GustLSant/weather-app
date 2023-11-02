@@ -15,7 +15,7 @@
 
 @media (max-width: 750px){
   html{
-    min-height: calc(100% + 60px);
+    min-height: calc(100% + 60px); /* era pra consertar a barra branca que aparece no fundo do background no mobile, mas n funcionou */
   }
 }
 

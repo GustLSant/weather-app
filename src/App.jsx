@@ -30,7 +30,7 @@ function App(){
     }
   }, [data])
 
-
+  
   return(
     <div className={(alt) ? "app alt" : "app"} style={{backgroundImage: bgImage}}>
       {(error && <PopUpError handleClose={()=>{setError(false)}} />)}
