@@ -31,11 +31,12 @@ function SidePanel() {
     function handleScrollForecastContainer(event){
         if(event.deltaY !== 0){
             const scrollSpeed = 20
+            
             if(event.deltaY > 0){
-                forecastContainerRef.current.scrollLeft -= scrollSpeed
+                forecastContainerRef.current.scrollLeft += scrollSpeed
             }
             else{
-                forecastContainerRef.current.scrollLeft += scrollSpeed
+                forecastContainerRef.current.scrollLeft -= scrollSpeed
             }
         }
     }
